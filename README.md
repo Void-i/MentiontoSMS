@@ -50,3 +50,32 @@ console.log('Message sent: '+response.message);
 
 now you can type ```node mail.js``` and you will have the server started
 
+=====
+
+Next you are going to want to start the client
+
+You can copy and paste the client.js into your browser's console but you are probably going to want to incorporate it into your own script or load it from a bookmarklet, etc.
+
+```javascript
+//Client
+var client = $('<link>');
+client.attr("href", "http://cdn.socket.io/stable/socket.io.js")
+$("head").append(client);
+
+	var socket = io.connect('<your domain/ip:port you used for the server');
+
+smsNotifications = true;
+API.on(API.CHAT_COMMAND, function(data){
+	if(data == "/sms") smsNotifications = !smsNotifications;
+});
+
+socket.on('connect', function(){
+		API.on(API.CHAT, function(data){
+		if(data.type == "mention" && smsNotifications === true){
+		socket.emit('smsMention', data.from, data.message);
+		}		
+	});
+});
+```
+
+
