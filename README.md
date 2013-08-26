@@ -16,7 +16,7 @@ Create a new file called mail.js or something similar
 
 Paste the contents of the server.js file into your mail.js file
         
-        javascript
+        ```javascript
 	//Server
 	var nodemailer = require('nodemailer');
 	var io = require('socket.io').listen(1337);
@@ -45,4 +45,4 @@ Paste the contents of the server.js file into your mail.js file
 	}
 	});
 	});
-	});
+	});```
