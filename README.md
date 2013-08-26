@@ -15,7 +15,8 @@ Log in to your server and create or cd to the directory that you want to keep th
 Create a new file called mail.js or something similar
 
 Paste the contents of the server.js file into your mail.js file
-
+        
+        javascript
 	//Server
 	var nodemailer = require('nodemailer');
 	var io = require('socket.io').listen(1337);
