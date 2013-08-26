@@ -1,6 +1,5 @@
 ##MentiontoSMS
-
-![Screenshot](http://i.imgur.com/UeVBS7sm.png)
+![Screenshot](http://i.imgur.com/UeVBS7sl.png)
 ============
 
 Requirements:
