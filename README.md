@@ -16,32 +16,32 @@ Create a new file called mail.js or something similar
 
 Paste the contents of the server.js file into your mail.js file
 
-`//Server
-var nodemailer = require('nodemailer');
-var io = require('socket.io').listen(1337);
+	//Server
+	var nodemailer = require('nodemailer');
+	var io = require('socket.io').listen(1337);
 
-var transport = nodemailer.createTransport("SMTP", {
-service: "Gmail",
-auth: {
-user: "derpthebass@gmail.com",
-pass: "hondafan2"
-}
-});
+	var transport = nodemailer.createTransport("SMTP", {
+	service: "Gmail",
+	auth: {
+	user: "derpthebass@gmail.com",
+	pass: "hondafan2"
+	}
+	});
 
-io.sockets.on('connection', function(socket){
-socket.on('smsMention', function(subject, msg){
-var mailOptions = {
+	io.sockets.on('connection', function(socket){
+	socket.on('smsMention', function(subject, msg){
+	var mailOptions = {
 	from: "DerpTheBass",
 	to: "4125233816@vtext.com",
 	subject: subject,
 	text: msg
-}
-smtpTransport.sendMail(mailOptions, function(error, response){
-if(error){
-console.log(error);
-}else{
-console.log('Message sent: '+response.message);
-}
-});
-});
-});`
+	}
+	smtpTransport.sendMail(mailOptions, function(error, response){
+	if(error){
+	console.log(error);
+	}else{
+	console.log('Message sent: '+response.message);
+	}
+	});
+	});
+	});
