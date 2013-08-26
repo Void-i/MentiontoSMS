@@ -1,4 +1,3 @@
-##MentiontoSMS
 ![Screenshot](http://i.imgur.com/UeVBS7sl.png)
 ============
 
