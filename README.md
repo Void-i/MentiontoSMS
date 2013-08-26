@@ -19,21 +19,21 @@ Paste the contents of the server.js file into your mail.js file
 ```javascript
 //Server
 var nodemailer = require('nodemailer');
-var io = require('socket.io').listen(1337);
+var io = require('socket.io').listen(anyport);
 
 var transport = nodemailer.createTransport("SMTP", {
-service: "Gmail",
+service: "Gmail",//It is easiest to use gmail as far as I have found but you will probably need to do this on the account you want to use https://accounts.google.com/DisplayUnlockCaptcha
 auth: {
-user: "derpthebass@gmail.com",
-pass: "hondafan2"
+user: "username@gmail.com",
+pass: "password"
 }
 });
 
 io.sockets.on('connection', function(socket){
 socket.on('smsMention', function(subject, msg){
 var mailOptions = {
-from: "DerpTheBass",
-to: "4125233816@vtext.com",
+from: "<anyone>",//This part really doesn't matter so put whatever you want
+to: "<your cell number>@vtext.com",//If you had Verizon you would use this, otherwise consult the 3rd requirement
 subject: subject,
 text: msg
 }
@@ -46,3 +46,6 @@ console.log('Message sent: '+response.message);
 });
 });
 });```
+
+now you can type ```node mail.js``` and you will have the server started
+
