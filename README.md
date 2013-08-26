@@ -45,7 +45,7 @@ console.log('Message sent: '+response.message);
 }
 });
 });
-});```
+});
 
 now you can type ```node mail.js``` and you will have the server started
 
