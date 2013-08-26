@@ -22,7 +22,7 @@ var nodemailer = require('nodemailer');
 var io = require('socket.io').listen(anyport);
 
 var transport = nodemailer.createTransport("SMTP", {
-service: "Gmail",//It is easiest to use gmail as far as I have found but you will probably need to do this on the account you want to use https://accounts.google.com/DisplayUnlockCaptcha
+service: "Gmail",
 auth: {
 user: "username@gmail.com",
 pass: "password"
@@ -47,6 +47,9 @@ console.log('Message sent: '+response.message);
 });
 });
 ```
+
+If you are using gmail (which I recommend) you are most likely going to have to use https://accounts.google.com/DisplayUnlockCaptcha
+on your account.
 
 now you can type ```node mail.js``` and you will have the server started
 
