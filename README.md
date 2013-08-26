@@ -83,4 +83,4 @@ socket.on('connect', function(){
 
 You are now ready to go! If you are mentioned you will recieve a text message containing the sender and the message.
 
-
+If you have any questions or problems you can message me.
